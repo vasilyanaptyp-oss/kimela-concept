@@ -37,22 +37,21 @@
 
     /* Atsarginis variantas: jei stebėjimas nesuveikia (greitas slinkimas,
        senesnė naršyklė), turinys vis tiek tampa matomas. */
-    var laukia = false;
     var perziura = function () {
-      if (laukia) { return; }
-      laukia = true;
-      window.requestAnimationFrame(function () {
-        laukia = false;
-        var h = window.innerHeight || document.documentElement.clientHeight;
-        revealItems.forEach(function (el) {
-          if (el.classList.contains('is-visible')) { return; }
-          var r = el.getBoundingClientRect();
-          if (r.top < h * 0.98 && r.bottom > 0) { el.classList.add('is-visible'); }
-        });
-      });
+      var h = window.innerHeight || document.documentElement.clientHeight;
+      for (var i = 0; i < revealItems.length; i++) {
+        var el = revealItems[i];
+        if (el.classList.contains('is-visible')) { continue; }
+        /* Sąlyga tik viršutiniam kraštui: kas jau praslinko pro ekraną,
+           lieka matoma. Anksčiau čia buvo dar ir r.bottom > 0, todėl greitai
+           slenkant peršokti elementai likdavo nematomi visam laikui. */
+        if (el.getBoundingClientRect().top < h) { el.classList.add('is-visible'); }
+      }
     };
     window.addEventListener('scroll', perziura, { passive: true });
     window.addEventListener('resize', perziura, { passive: true });
+    window.addEventListener('load', perziura);
+    setTimeout(perziura, 1200);
   } else {
     revealItems.forEach(function (el) { el.classList.add('is-visible'); });
   }
