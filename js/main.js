@@ -34,6 +34,25 @@
       });
     }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
     revealItems.forEach(function (el) { io.observe(el); });
+
+    /* Atsarginis variantas: jei stebėjimas nesuveikia (greitas slinkimas,
+       senesnė naršyklė), turinys vis tiek tampa matomas. */
+    var laukia = false;
+    var perziura = function () {
+      if (laukia) { return; }
+      laukia = true;
+      window.requestAnimationFrame(function () {
+        laukia = false;
+        var h = window.innerHeight || document.documentElement.clientHeight;
+        revealItems.forEach(function (el) {
+          if (el.classList.contains('is-visible')) { return; }
+          var r = el.getBoundingClientRect();
+          if (r.top < h * 0.98 && r.bottom > 0) { el.classList.add('is-visible'); }
+        });
+      });
+    };
+    window.addEventListener('scroll', perziura, { passive: true });
+    window.addEventListener('resize', perziura, { passive: true });
   } else {
     revealItems.forEach(function (el) { el.classList.add('is-visible'); });
   }
