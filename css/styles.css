@@ -1,5 +1,5 @@
 /* ============================================================
-   Kimela — sunkvežimių ir autocisternų plovykla
+   Kimela — automobilių ir autocisternų plovykla
    ============================================================ */
 
 :root{
@@ -321,8 +321,8 @@ a{color:inherit}
 
 /* ---------- Transporto tipai ---------- */
 .type-grid{display:grid;gap:14px;grid-template-columns:1fr}
+/* 4 kortelės: visada 2×2 nuo 640px, kad nė viena neliktų viena eilėje */
 @media (min-width:640px){ .type-grid{grid-template-columns:repeat(2,1fr)} }
-@media (min-width:1040px){ .type-grid{grid-template-columns:repeat(3,1fr)} }
 
 .type-card{
   position:relative;

@@ -17,9 +17,7 @@
     'Cisterna':                { tipas: 'registracija', tekstas: 'Cisternoms būtina išankstinė registracija — laiką patvirtinsime telefonu.' },
     'ADR cisterna':            { tipas: 'registracija', tekstas: 'ADR cisternoms būtina išankstinė registracija — laiką patvirtinsime telefonu.' },
     'Tank / silo konteineris': { tipas: 'registracija', tekstas: 'Tank ir silo konteineriams būtina išankstinė registracija — laiką patvirtinsime telefonu.' },
-    'Lengvasis automobilis':   { tipas: 'eile',         tekstas: 'Lengviesiems ir mikroautobusams registracijos nereikia — galite atvažiuoti darbo valandomis. Užklausą siųskite, jei norite pasitikslinti.' },
-    'Vilkikas':                { tipas: 'telefonu',     tekstas: 'Laiką vilkikui suderinsime telefonu pagal užklausą.' },
-    'Puspriekabė / tentas':    { tipas: 'telefonu',     tekstas: 'Laiką puspriekabei suderinsime telefonu pagal užklausą.' }
+    'Lengvasis automobilis':   { tipas: 'eile',         tekstas: 'Lengviesiems ir mikroautobusams registracijos nereikia — galite atvažiuoti darbo valandomis. Užklausą siųskite, jei norite pasitikslinti.' }
   };
 
   /* ---------- 1. Atsiradimas slenkant ---------- */
