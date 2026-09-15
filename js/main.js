@@ -14,9 +14,9 @@
 
   /* Registracijos tvarka pagal transporto tipą */
   var TVARKA = {
-    'Cisterna':                { tipas: 'registracija', tekstas: 'Cisternoms būtina išankstinė registracija — laiką patvirtinsime telefonu.' },
-    'ADR cisterna':            { tipas: 'registracija', tekstas: 'ADR cisternoms būtina išankstinė registracija — laiką patvirtinsime telefonu.' },
-    'Tank / silo konteineris': { tipas: 'registracija', tekstas: 'Tank ir silo konteineriams būtina išankstinė registracija — laiką patvirtinsime telefonu.' },
+    'Cisterna':                { tipas: 'registracija', tekstas: 'Cisternoms pageidaujama išankstinė registracija — laiką patvirtinsime telefonu.' },
+    'ADR cisterna':            { tipas: 'registracija', tekstas: 'ADR cisternoms pageidaujama išankstinė registracija — laiką patvirtinsime telefonu.' },
+    'Tank / silo konteineris': { tipas: 'registracija', tekstas: 'Tank ir silo konteineriams pageidaujama išankstinė registracija — laiką patvirtinsime telefonu.' },
     'Lengvasis automobilis':   { tipas: 'eile',         tekstas: 'Lengviesiems ir mikroautobusams registracijos nereikia — galite atvažiuoti darbo valandomis. Užklausą siųskite, jei norite pasitikslinti.' }
   };
 
